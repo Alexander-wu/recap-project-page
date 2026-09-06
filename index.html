@@ -305,13 +305,16 @@
         <div class="section-kicker">Qualitative rollouts</div>
         <h2>Same observations. Same actions. Different context.</h2>
         <p class="section-intro">
-          Each animation synchronizes ground truth, Full Context, and ReCAP over a 64-frame
-          visual open-loop rollout. LIBERO-90 is shown in canonical upright orientation.
+          Each animation synchronizes ground truth, Full Context, and ReCAP under identical
+          initial observations, actions, and sampling seeds. RT-1, CALVIN, and LIBERO-90
+          show 64-frame rollouts; BridgeV2 shows 32-frame rollouts for its shorter episodes.
+          LIBERO-90 is shown in canonical upright orientation.
         </p>
         <div class="tabs" role="tablist" aria-label="Rollout dataset">
           <button class="tab is-active" role="tab" aria-selected="true" data-tab="rt1">RT-1</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="calvin">CALVIN</button>
           <button class="tab" role="tab" aria-selected="false" data-tab="libero">LIBERO-90</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="bridge">BridgeV2</button>
         </div>
 
         <div class="tab-panel is-active" data-panel="rt1">
@@ -378,6 +381,29 @@
               <div class="case-copy"><span class="split">LIBERO-90 held-out task</span><h3>“put the chocolate pudding to the right of the plate”</h3><span class="gain">+2.61 dB</span></div>
               <div class="triptych-labels"><span>Ground truth</span><span>Full Context</span><span>ReCAP</span></div>
               <img src="assets/gifs/libero-3.gif" alt="Animated LIBERO comparison for moving chocolate pudding">
+              <button class="replay" type="button" data-replay>Replay</button>
+            </article>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="bridge">
+          <p class="section-intro">Three high-gain examples selected from 24 validation candidates. Each rollout observes one frame and predicts the next 32. Badges show mean PSNR improvement across all 32 predictions; task descriptions label the episodes.</p>
+          <div class="case-grid">
+            <article class="case-card">
+              <div class="case-copy"><span class="split">BridgeV2 validation · 32 frames</span><h3>“Place the pot on top of the towel.”</h3><span class="gain" title="Mean PSNR improvement over all 32 predicted frames">+0.78 dB</span></div>
+              <div class="triptych-labels"><span>Ground truth</span><span>Full Context</span><span>ReCAP</span></div>
+              <img src="assets/gifs/bridge-1.gif" width="728" height="192" loading="lazy" alt="Animated BridgeV2 comparison: Place the pot on top of the towel.">
+              <button class="replay" type="button" data-replay>Replay</button>
+            </article>
+            <article class="case-card">
+              <div class="case-copy"><span class="split">BridgeV2 validation · 32 frames</span><h3>“put the broccoli next to the bowl”</h3><span class="gain" title="Mean PSNR improvement over all 32 predicted frames">+4.02 dB</span></div>
+              <div class="triptych-labels"><span>Ground truth</span><span>Full Context</span><span>ReCAP</span></div>
+              <img src="assets/gifs/bridge-2.gif" width="728" height="192" loading="lazy" alt="Animated BridgeV2 comparison: put the broccoli next to the bowl">
+              <button class="replay" type="button" data-replay>Replay</button>
+            </article>
+            <article class="case-card">
+              <div class="case-copy"><span class="split">BridgeV2 validation · 32 frames</span><h3>“Move the spatula to corner of the table.”</h3><span class="gain" title="Mean PSNR improvement over all 32 predicted frames">+2.30 dB</span></div>
+              <div class="triptych-labels"><span>Ground truth</span><span>Full Context</span><span>ReCAP</span></div>
+              <img src="assets/gifs/bridge-3.gif" width="728" height="192" loading="lazy" alt="Animated BridgeV2 comparison: Move the spatula to corner of the table.">
               <button class="replay" type="button" data-replay>Replay</button>
             </article>
           </div>
